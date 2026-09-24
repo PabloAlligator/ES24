@@ -1,0 +1,980 @@
+$paper: #f7f7f3;
+$ink: #0b0c0d;
+$muted: #66696c;
+$line: rgba(11, 12, 13, 0.24);
+$acid: #dfff00;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: $paper;
+  color: $ink;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+.page {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 820px;
+  overflow: hidden;
+  isolation: isolate;
+  background: $paper;
+}
+
+// вертикальная прогрессия
+.hero-rail {
+  position: absolute;
+  top: 160px;
+  left: 24px;
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+
+  color: #8b8d8f;
+
+  &__pages {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+
+    margin: 0;
+    padding: 0 0 0 26px;
+
+    list-style: none;
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      top: 4px;
+      bottom: 2px;
+      left: 7px;
+
+      width: 1px;
+
+      background: #afb1b3;
+    }
+  }
+
+  &__page {
+    position: relative;
+
+    min-width: 24px;
+
+    font-size: 11px;
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      top: 50%;
+      left: -19px;
+
+      width: 7px;
+      height: 1px;
+
+      background: #afb1b3;
+
+      transform: translateY(-50%);
+    }
+
+    &--active {
+      color: #0b0c0d;
+      font-weight: 800;
+
+      &::before {
+        width: 13px;
+
+        background: #0b0c0d;
+      }
+
+      &::after {
+        content: '';
+
+        position: absolute;
+        top: -7px;
+        left: -21px;
+
+        width: 3px;
+        height: 20px;
+
+        background: $acid;
+      }
+    }
+  }
+
+  &__labels {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+
+    font-size: 11px;
+    line-height: 1;
+    letter-spacing: 0.08em;
+  }
+}
+
+// хиро контент
+
+.hero-content {
+  position: relative;
+  z-index: 5;
+
+  width: min(1010px, 61vw);
+  margin-left: clamp(56px, 6.15vw, 199px);
+  // margin-left: 100px;
+  padding-top: clamp(30px, 50px, 70px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+
+  &__title {
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+
+    width: 100%;
+    font-weight: 900;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding-left: 1px;
+  }
+}
+
+.hero-brand {
+  display: block;
+  width: fit-content;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 32px;
+
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: clamp(66px, 5.05vw, 85px);
+  line-height: 0.86;
+  letter-spacing: 0.05em;
+  font-style: italic;
+  white-space: nowrap;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  background-image: url('../img/hero-back.png');
+  background-size: 1080px auto;
+  background-position: 46% 43%;
+  background-repeat: no-repeat;
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  filter: grayscale(1) contrast(1.45) brightness(0.33);
+
+  transform: skewX(-10deg) scaleX(1.1);
+  transform-origin: left center;
+}
+
+.hero-model {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+
+  width: fit-content;
+
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-left: -30px;
+
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: clamp(190px, 15.45vw, 264px);
+  line-height: 0.78;
+  letter-spacing: 2px;
+  font-style: italic;
+
+  transform: skewX(-8deg) scaleX(1.055);
+  transform-origin: left center;
+  &__name,
+  &__detail {
+    display: block;
+
+    width: fit-content;
+    padding: 0 40px;
+    margin-left: -30px;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    background-repeat: no-repeat;
+  }
+
+  &__name {
+    background-image: url('../img/hero-back.png');
+    background-size: 1080px auto;
+    background-position: 46% 43%;
+
+    filter: grayscale(1) contrast(1.45) brightness(0.33);
+  }
+
+  &__detail {
+    font-size: 0.79em;
+    line-height: 0.72;
+    letter-spacing: 3px;
+
+    background-image:
+      linear-gradient(rgba($acid, 0.88), rgba($acid, 0.88)),
+      url('../img/hero-back.png');
+    background-size:
+      auto,
+      900px auto;
+    background-position:
+      center,
+      34% 73%;
+    background-blend-mode: multiply;
+
+    filter: saturate(1.3) contrast(1.22) brightness(1.07);
+  }
+}
+
+.hero-slogan {
+  position: relative;
+
+  width: 330px;
+  margin: 0;
+  padding: 0 0 17px 1px;
+
+  font-family: 'Arial Narrow', Arial, Helvetica, sans-serif;
+  font-size: clamp(20px, 1.43vw, 24px);
+  line-height: 1.13;
+  letter-spacing: 0.075em;
+  font-weight: 900;
+  font-style: italic;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 1px;
+    bottom: 0;
+
+    width: 46px;
+    height: 4px;
+
+    background: $acid;
+    transform: skewX(-18deg);
+  }
+}
+
+.primary,
+.podobrat {
+  position: relative;
+
+  height: 54px;
+  padding: 0;
+  border: 0;
+
+  background: transparent;
+  cursor: pointer;
+
+  font-size: 13px;
+  font-weight: 900;
+  font-style: normal;
+  letter-spacing: 0.005em;
+}
+
+.primary {
+  width: 280px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  background: $acid;
+  clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
+
+  svg {
+    width: 20px;
+    height: 16px;
+    fill: $ink;
+    flex: 0 0 auto;
+  }
+}
+
+.podobrat {
+  width: 252px;
+
+  border: 1px solid $ink;
+  background: rgba($paper, 0.84);
+  transform: skewX(-9deg);
+
+  span {
+    display: inline-block;
+    transform: skewX(9deg);
+  }
+}
+
+.hero-adventages {
+  width: 590px;
+  margin: 0;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  &__block {
+    position: relative;
+
+    min-height: 92px;
+    padding-right: 18px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+
+    & + & {
+      padding-left: 24px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 3px;
+        bottom: 1px;
+
+        width: 1px;
+        background: $line;
+      }
+    }
+  }
+
+  &__icon {
+    width: 31px;
+    height: 31px;
+    margin: 0;
+
+    fill: none;
+    stroke: $ink;
+    stroke-width: 2.1;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+  }
+
+  &__block-text {
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+
+    strong {
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-size: 27px;
+      line-height: 0.94;
+      font-weight: 200;
+      letter-spacing: 0.005em;
+
+      small {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: lowercase;
+      }
+    }
+
+    > span {
+      color: #3f4245;
+      font-size: 9px;
+      line-height: 1.12;
+      font-weight: 700;
+      letter-spacing: 0.055em;
+    }
+  }
+}
+
+.hero-obzor {
+  width: 590px;
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  &__button {
+    flex: 0 0 auto;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+  }
+
+  &__icon {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid $ink;
+    border-radius: 50%;
+
+    transition:
+      background-color 0.25s ease,
+      color 0.25s ease;
+
+    svg {
+      width: 11px;
+      height: 13px;
+      margin-left: 2px;
+      fill: currentColor;
+    }
+  }
+
+  &__button:hover &__icon {
+    color: #fff;
+    background: $ink;
+  }
+
+  &__button-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    font-size: 10px;
+    line-height: 1.08;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+  }
+
+  &__gallery {
+    flex: 0 0 auto;
+
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+
+  &__image {
+    position: relative;
+
+    width: 66px;
+    height: 51px;
+
+    overflow: hidden;
+    background: #d7d7d2;
+    clip-path: polygon(17% 0, 100% 0, 83% 100%, 0 100%);
+
+    img {
+      position: absolute;
+      max-width: none;
+      width: 215px;
+      height: auto;
+    }
+
+    &--front img {
+      left: -48px;
+      top: -68px;
+    }
+
+    &--middle img {
+      left: -76px;
+      top: -52px;
+    }
+
+    &--rear img {
+      left: -120px;
+      top: -48px;
+    }
+  }
+
+  &__caption {
+    flex: 0 0 auto;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    color: $muted;
+    font-size: 9px;
+    line-height: 1.15;
+    letter-spacing: 0.075em;
+    white-space: nowrap;
+  }
+}
+
+.hero-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  overflow: hidden;
+  pointer-events: none;
+
+  &__mountains {
+    position: absolute;
+
+    left: 18.5%;
+    right: 10.5%;
+    bottom: -1.5%;
+
+    height: 56%;
+
+    overflow: hidden;
+
+    // Маска остаётся на контейнере
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 10%,
+      #000 92%,
+      transparent 100%
+    );
+
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 10%,
+      #000 92%,
+      transparent 100%
+    );
+
+    // САМА ФОТОГРАФИЯ
+    &::before {
+      content: '';
+
+      position: absolute;
+
+      // Делаем слой выше контейнера,
+      // чтобы при движении вверх не появилась пустота снизу
+      left: 0;
+      right: 0;
+      top: -350px;
+      bottom: -120px;
+
+      background: url('../img/hero-back.png') center center / cover no-repeat;
+
+      // ВОТ ЭТИМ РЕАЛЬНО ДВИГАЕШЬ ФОТО
+      transform: translateY(-50px);
+
+      opacity: 0.82;
+
+      filter: saturate(0.78) contrast(1.04) brightness(1.08);
+    }
+
+    // БЕЛОЕ ЗАТУХАНИЕ СЛЕВА
+    &::after {
+      content: '';
+
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+
+      background: linear-gradient(
+        90deg,
+        rgba($paper, 0.96) 0%,
+        rgba($paper, 0.76) 18%,
+        rgba($paper, 0.28) 46%,
+        rgba($paper, 0.04) 77%,
+        rgba($paper, 0) 100%
+      );
+    }
+  }
+
+  &__right {
+    position: absolute;
+    inset: 0 0 0 auto;
+
+    width: 42%;
+    height: 100%;
+  }
+
+  // Базовая геометрия фигур.
+  // Теперь конкретный угол можно переопределять
+  // отдельно у каждой фигуры ниже.
+  &__slash,
+  &__mountain-panel,
+  &__rider-panel,
+  &__lower-cut {
+    transform: skewX(-28deg);
+    transform-origin: center;
+  }
+
+  // НАКЛОННЫЕ ПОЛОСЫ
+
+  &__slash {
+    position: absolute;
+    overflow: hidden;
+
+    // Сам фон переносим сюда.
+    // Родитель наклонён, а фотография получает
+    // обратный skew и поэтому не деформируется.
+    &::before {
+      content: '';
+
+      position: absolute;
+      inset: -18% -150%;
+
+      transform: skewX(28deg);
+      transform-origin: center;
+
+      background-repeat: no-repeat;
+    }
+  }
+
+  // ЧЁРНАЯ ПОЛОСА
+
+&__slash--black {
+  top: 4.2%;
+  right: 60.5%;
+  z-index: 1;
+
+  width: 18%;
+  height: 41%;
+
+  transform: skewX(-28deg);
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    inset: auto;
+
+    // ПОЛОЖЕНИЕ САМОГО СЛОЯ
+    right: -70%;
+    bottom: -10%;
+
+    // РАЗМЕР СЛОЯ
+    width: 400%;
+    height: 140%;
+
+    background-image:
+      linear-gradient(
+        rgba(4, 5, 6, 0.66),
+        rgba(4, 5, 6, 0.66)
+      ),
+      url("../img/hero-back.png");
+
+    // 1 слой — затемнение
+    // 2 слой — размер / зум фотографии
+    background-size:
+      100% 100%,
+      460% auto;
+
+    // 1 слой — затемнение
+    // 2 слой — положение фотографии
+    background-position:
+      center,
+      calc(50% - 370px) calc(50% + 410px);
+
+    background-repeat: no-repeat;
+
+    background-blend-mode: multiply;
+
+    // Компенсация наклона родителя
+    transform: skewX(28deg);
+    transform-origin: center;
+
+    filter:
+      contrast(1.12)
+      saturate(0.78);
+  }
+}
+
+  // КИСЛОТНАЯ ПОЛОСА
+
+&__slash--acid {
+  top: -4.5%;
+  right: 72.8%;
+  z-index: 4;
+
+  width: 3.3%;
+  height: 46%;
+
+  background: $acid;
+
+  transform: skewX(-28deg);
+  transform-origin: center;
+
+  &::before {
+    content: none;
+  }
+}
+
+  // СВЕТЛАЯ ПОЛОСА откл
+
+  &__slash--white {
+    position: absolute;
+
+    right: 21.5%;
+    bottom: 0;
+    z-index: 2;
+
+    width: 18%;
+    height: 49%;
+
+    overflow: hidden;
+
+    // УГОЛ ФИГУРЫ
+    transform: skewX(-28deg);
+
+    background: none;
+
+    &::before {
+      background:
+        linear-gradient(rgba($paper, 0.65), rgba($paper, 0.65)),
+        url('../img/hero-back.png') 84% 13% / 910px auto no-repeat;
+
+      background-blend-mode: screen;
+
+      filter: saturate(0.92) contrast(1.06);
+    }
+  }
+
+  // ВЕРХНЯЯ БОЛЬШАЯ ПАНЕЛЬ С ГОРАМИ
+
+  &__mountain-panel {
+    position: absolute;
+
+    top: 3%;
+    right: 20%;
+    z-index: 3;
+
+    width: 57%;
+    height: 89%;
+
+    overflow: hidden;
+    background: none;
+
+    // УГОЛ ФИГУРЫ
+    transform: skewX(-28deg);
+
+    &::before {
+      content: '';
+
+      position: absolute;
+
+      // Запас по краям нужен из-за обратного skew.
+      inset: -12% -64%;
+
+      background: url('../img/hero-back.png') 72% 16% / cover no-repeat;
+
+      // Компенсация наклона панели.
+      transform: skewX(28deg) scale(1.08);
+      transform-origin: center;
+
+      filter: saturate(0.92) contrast(1.06);
+    }
+
+    // КИСЛОТНАЯ ПОЛОСА
+    &::after {
+      content: '';
+
+      position: absolute;
+
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+
+      width: 10px;
+      height: 38%;
+
+      background: $acid;
+    }
+  }
+
+  // ПАНЕЛЬ С РАЙДЕРОМ
+
+  &__rider-panel {
+    position: absolute;
+
+    top: 35.1%;
+    right: -0.5%;
+    z-index: 5;
+
+    width: 47.5%;
+    height: 46.8%;
+
+    overflow: hidden;
+    background: none;
+
+    transform: skewX(-28deg);
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      inset: -12% -24%;
+
+      background: url('../img/hero-back.png') 78% 73% / cover no-repeat;
+
+      transform: skewX(28deg) scale(1.08);
+      transform-origin: center;
+    }
+
+    mask-image:
+      linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(0, 0, 0, 0.08) 8%,
+        rgba(0, 0, 0, 0.22) 16%,
+        rgba(0, 0, 0, 0.48) 26%,
+        rgba(0, 0, 0, 0.75) 36%,
+        #000 48%
+      ),
+      linear-gradient(
+        82deg,
+        transparent 0%,
+        rgba(0, 0, 0, 0.14) 7%,
+        rgba(0, 0, 0, 0.38) 14%,
+        rgba(0, 0, 0, 0.7) 21%,
+        #000 30%
+      );
+
+    mask-composite: intersect;
+
+    -webkit-mask-image:
+      linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(0, 0, 0, 0.08) 8%,
+        rgba(0, 0, 0, 0.22) 16%,
+        rgba(0, 0, 0, 0.48) 26%,
+        rgba(0, 0, 0, 0.75) 36%,
+        #000 48%
+      ),
+      linear-gradient(
+        82deg,
+        transparent 0%,
+        rgba(0, 0, 0, 0.14) 7%,
+        rgba(0, 0, 0, 0.38) 14%,
+        rgba(0, 0, 0, 0.7) 21%,
+        #000 30%
+      );
+
+    -webkit-mask-composite: source-in;
+
+    img {
+      position: absolute;
+
+      right: 12%;
+      bottom: 11%;
+
+      z-index: 1;
+
+      width: 55%;
+      max-width: none;
+      height: auto;
+
+      transform: skewX(28deg);
+      transform-origin: center;
+
+      filter: contrast(1.04) saturate(0.96);
+    }
+  }
+
+  // НИЖНЯЯ БЕЛАЯ МАСКА
+
+  &__lower-cut {
+    position: absolute;
+
+    right: -9%;
+    bottom: -2.1%;
+    z-index: 6;
+
+    width: 42%;
+    height: 25%;
+
+    // УГОЛ ФИГУРЫ
+    transform: skewX(-28deg);
+
+    background: $paper;
+  }
+}
+
+// @media (max-width: 1500px) {
+//   .hero-content {
+//     width: min(900px, 63vw);
+//     margin-left: 54px;
+//     padding-top: 118px;
+//     gap: 16px;
+//   }
+
+//   .hero-brand {
+//     margin-left: 44px;
+//     font-size: clamp(58px, 5vw, 75px);
+//   }
+
+//   .hero-model {
+//     font-size: clamp(172px, 14.2vw, 214px);
+//   }
+
+//   .hero-slogan {
+//     font-size: 20px;
+//   }
+
+//   .primary {
+//     width: 254px;
+//   }
+
+//   .podobrat {
+//     width: 230px;
+//   }
+
+//   .hero-adventages,
+//   .hero-obzor {
+//     width: 540px;
+//   }
+
+//   .hero-obzor__image {
+//     width: 59px;
+//     height: 46px;
+//   }
+// }
