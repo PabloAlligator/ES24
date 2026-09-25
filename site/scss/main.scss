@@ -150,6 +150,63 @@ button {
   }
 }
 
+// манифест
+
+.hero-manifest {
+  position: absolute;
+  top: 160px;
+  right: 24px;
+  z-index: 5;
+
+  padding-right: 26px;
+
+  color: #8b8d8f;
+
+  text-align: right;
+
+  // Вертикальная линия справа
+  &::before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    right: 7px;
+
+    width: 1px;
+    height: 58px;
+
+    background: #afb1b3;
+  }
+
+  // Кислотная короткая черта
+  &::after {
+    content: '';
+
+    position: absolute;
+    right: 26px;
+    bottom: -18px;
+
+    width: 18px;
+    height: 3px;
+
+    background: $acid;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 7px;
+
+    font-size: 11px;
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+
+    white-space: nowrap;
+  }
+}
+
 // хиро контент
 
 .hero-content {
@@ -554,16 +611,270 @@ button {
 
 .hero-bike {
   position: absolute;
-  left: 42.8%;
-  bottom: -2.2%;
-  z-index: 4;
+  left: 32.8%;
+  bottom: 4%;
+  z-index: 6;
 
-  width: 49.5%;
+  width: 50.5%;
 
   pointer-events: none;
 }
 
 .hero-bike__image {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+}
+
+// дым позади мотоцикла
+.hero-bike-smoke {
+  position: absolute;
+  left: 27%;
+  bottom: 0;
+  z-index: 4;
+
+  width: 62%;
+  height: 68%;
+
+  pointer-events: none;
+  overflow: visible;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    will-change: transform, opacity;
+  }
+
+  // дальняя мягкая дымка
+  &::before {
+    left: 8%;
+    right: 10%;
+    bottom: 8%;
+    top: 30%;
+
+    background:
+      radial-gradient(
+        ellipse at 24% 70%,
+        rgba($acid, 0.12) 0%,
+        rgba($acid, 0.07) 24%,
+        rgba($acid, 0.03) 46%,
+        rgba($acid, 0) 74%
+      ),
+      radial-gradient(
+        ellipse at 56% 74%,
+        rgba($acid, 0.15) 0%,
+        rgba($acid, 0.08) 26%,
+        rgba($acid, 0.03) 48%,
+        rgba($acid, 0) 76%
+      ),
+      radial-gradient(
+        ellipse at 82% 62%,
+        rgba($acid, 0.11) 0%,
+        rgba($acid, 0.06) 24%,
+        rgba($acid, 0.03) 44%,
+        rgba($acid, 0) 72%
+      );
+
+    filter: blur(42px);
+    opacity: 0.32;
+  }
+
+  // средний слой, ближе к колёсам
+  &::after {
+    left: 12%;
+    right: 10%;
+    bottom: 10%;
+    top: 36%;
+
+    background:
+      radial-gradient(
+        ellipse at 18% 66%,
+        rgba($acid, 0.15) 0%,
+        rgba($acid, 0.09) 24%,
+        rgba($acid, 0.04) 42%,
+        rgba($acid, 0) 68%
+      ),
+      radial-gradient(
+        ellipse at 48% 72%,
+        rgba($acid, 0.16) 0%,
+        rgba($acid, 0.1) 24%,
+        rgba($acid, 0.04) 46%,
+        rgba($acid, 0) 70%
+      ),
+      radial-gradient(
+        ellipse at 76% 64%,
+        rgba($acid, 0.14) 0%,
+        rgba($acid, 0.08) 22%,
+        rgba($acid, 0.04) 42%,
+        rgba($acid, 0) 68%
+      );
+
+    filter: blur(30px);
+    opacity: 0.28;
+  }
+}
+
+.hero-bike-smoke__puff {
+  position: absolute;
+  z-index: 2;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      ellipse at 34% 58%,
+      rgba($acid, 0.26) 0%,
+      rgba($acid, 0.16) 22%,
+      rgba($acid, 0.09) 42%,
+      rgba($acid, 0.035) 64%,
+      rgba($acid, 0) 86%
+    ),
+    radial-gradient(
+      ellipse at 72% 34%,
+      rgba($acid, 0.16) 0%,
+      rgba($acid, 0.075) 26%,
+      rgba($acid, 0) 68%
+    ),
+    radial-gradient(
+      ellipse at 60% 78%,
+      rgba($acid, 0.11) 0%,
+      rgba($acid, 0.05) 22%,
+      rgba($acid, 0) 60%
+    );
+
+  filter: blur(16px);
+  opacity: 0.16;
+
+  will-change: transform, opacity, border-radius;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: inherit;
+    pointer-events: none;
+  }
+
+  &::before {
+    inset: 10% 18% 20% 8%;
+    opacity: 0.58;
+    filter: blur(11px);
+    transform: translate(-8%, -6%) scale(0.9);
+  }
+
+  &::after {
+    inset: 20% 6% 10% 24%;
+    opacity: 0.46;
+    filter: blur(13px);
+    transform: translate(10%, 7%) scale(0.86);
+  }
+}
+
+// Передняя часть / колесо
+// немного спереди
+.hero-bike-smoke__puff--1 {
+  left: 2%;
+  bottom: 23%;
+  width: 150px;
+  height: 100px;
+}
+
+.hero-bike-smoke__puff--2 {
+  left: 9%;
+  bottom: 14%;
+  width: 185px;
+  height: 122px;
+}
+
+// под мотором — слабее
+.hero-bike-smoke__puff--3 {
+  left: 31%;
+  bottom: 7%;
+  width: 205px;
+  height: 136px;
+}
+
+.hero-bike-smoke__puff--4 {
+  left: 42%;
+  bottom: 5%;
+  width: 220px;
+  height: 144px;
+}
+
+// заднее колесо — основной объём
+.hero-bike-smoke__puff--5 {
+  right: 18%;
+  bottom: 14%;
+  width: 220px;
+  height: 145px;
+}
+
+.hero-bike-smoke__puff--6 {
+  right: 9%;
+  bottom: 24%;
+  width: 185px;
+  height: 122px;
+}
+
+.hero-bike-smoke__puff--7 {
+  right: 2%;
+  bottom: 10%;
+  width: 155px;
+  height: 102px;
+}
+
+// хвост над задним колесом
+.hero-bike-smoke__puff--8 {
+  right: 12%;
+  bottom: 33%;
+  width: 138px;
+  height: 90px;
+  opacity: 0.06;
+}
+
+.hero-bike-smoke__puff--1,
+.hero-bike-smoke__puff--3,
+.hero-bike-smoke__puff--6 {
+  z-index: 1;
+  filter: blur(22px);
+  opacity: 0.12;
+}
+
+.hero-bike-smoke__puff--2,
+.hero-bike-smoke__puff--4,
+.hero-bike-smoke__puff--5 {
+  z-index: 2;
+  filter: blur(17px);
+  opacity: 0.16;
+}
+
+.hero-bike-smoke__puff--7,
+.hero-bike-smoke__puff--8 {
+  z-index: 3;
+  filter: blur(12px);
+  opacity: 0.12;
+}
+
+// камни
+
+.hero-rocks {
+  position: absolute;
+  left: 30.8%;
+  bottom: 0%;
+  z-index: 3;
+
+  width: 39.5%;
+
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-rocks__image {
   display: block;
   width: 100%;
   max-width: none;
@@ -693,82 +1004,77 @@ button {
 
   // ЧЁРНАЯ ПОЛОСА
 
-&__slash--black {
-  top: 4.2%;
-  right: 60.5%;
-  z-index: 1;
+  &__slash--black {
+    top: 0%;
+    right: 80.5%;
+    z-index: 1;
 
-  width: 18%;
-  height: 41.5%;
+    width: 18%;
+    height: 41.5%;
 
-  transform: skewX(-28deg);
+    transform: skewX(-28deg);
 
-  &::before {
-    content: "";
+    &::before {
+      content: '';
 
-    position: absolute;
-    inset: auto;
+      position: absolute;
+      inset: auto;
 
-    // ПОЛОЖЕНИЕ САМОГО СЛОЯ
-    right: -70%;
-    bottom: -10%;
+      // ПОЛОЖЕНИЕ САМОГО СЛОЯ
+      right: -70%;
+      bottom: -10%;
 
-    // РАЗМЕР СЛОЯ
-    width: 400%;
-    height: 140%;
+      // РАЗМЕР СЛОЯ
+      width: 400%;
+      height: 140%;
 
-    background-image:
-      linear-gradient(
-        rgba(4, 5, 6, 0.66),
-        rgba(4, 5, 6, 0.66)
-      ),
-      url("../img/hero-back.png");
+      background-image:
+        linear-gradient(rgba(4, 5, 6, 0.66), rgba(4, 5, 6, 0.66)),
+        url('../img/hero-back.png');
 
-    // 1 слой — затемнение
-    // 2 слой — размер / зум фотографии
-   background-size:
-  100% 100%,
-  auto 180%;
+      // 1 слой — затемнение
+      // 2 слой — размер / зум фотографии
+      background-size:
+        100% 100%,
+        auto 180%;
 
-    // 1 слой — затемнение
-    // 2 слой — положение фотографии
-   background-position:
-  center,
-  10% 50%;
+      // 1 слой — затемнение
+      // 2 слой — положение фотографии
+      background-position:
+        center,
+        10% 50%;
 
-    background-repeat: no-repeat;
+      background-repeat: no-repeat;
 
-    background-blend-mode: multiply;
+      background-blend-mode: multiply;
 
-    // Компенсация наклона родителя
-    transform: skewX(28deg);
-    transform-origin: center;
+      // Компенсация наклона родителя
+      transform: skewX(28deg);
+      transform-origin: center;
 
-    filter:
-      contrast(1.12)
-      saturate(0.78);
+      filter: contrast(1.12) saturate(0.78);
+    }
   }
-}
 
   // КИСЛОТНАЯ ПОЛОСА
 
-&__slash--acid {
-  top: -4.5%;
-  right: 72.8%;
-  z-index: 4;
+  &__slash--acid {
+    top: -4.5%;
+    right: 95.8%;
+    z-index: 4;
 
-  width: 3.3%;
-  height: 46%;
+    width: 3.3%;
+    height: 46%;
 
-  background: $acid;
+    background: $acid;
 
-  transform: skewX(-28deg);
-  transform-origin: center;
+    transform: skewX(-28deg);
+    transform-origin: center;
 
-  &::before {
-    content: none;
+    &::before {
+      content: none;
+    }
   }
-}
 
   // СВЕТЛАЯ ПОЛОСА откл
 
@@ -805,12 +1111,12 @@ button {
   &__mountain-panel {
     position: absolute;
 
-    top: 3%;
-    right: 20%;
+    top: 0%;
+    right: 40%;
     z-index: 3;
 
     width: 57%;
-    height: 89%;
+    height: 94%;
 
     overflow: hidden;
     background: none;
@@ -958,6 +1264,106 @@ button {
     transform: skewX(-28deg);
 
     background: $paper;
+
+    // КИСЛОТНАЯ ПОЛОСА
+    &::after {
+      content: '';
+
+      position: absolute;
+
+      // right: 0;
+      left: 0;
+      bottom: 34%;
+      z-index: 2;
+
+      width: 10px;
+      height: 66%;
+
+      background: $acid;
+    }
+  }
+
+  &__lower-info {
+    position: absolute;
+
+    right: 2.8%;
+    bottom: 7.5%;
+    z-index: 7;
+
+    width: 150px;
+
+    color: $ink;
+
+    // длинная кислотная диагональ слева
+    &::before {
+      content: '';
+
+      position: absolute;
+
+      left: -74px;
+      top: 7px;
+
+      width: 2px;
+      height: 98px;
+
+      background: $acid;
+
+      transform: rotate(28deg);
+      transform-origin: bottom center;
+    }
+  }
+
+  &__lower-model {
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    span {
+      color: #696c6e;
+
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+    }
+
+    strong {
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+    }
+  }
+
+  &__lower-copy {
+    position: relative;
+
+    margin: 14px 0 0;
+    padding-bottom: 19px;
+
+    color: #696c6e;
+
+    font-size: 12px;
+    line-height: 1.45;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+
+    // маленькая кислотная черта снизу
+    &::after {
+      content: '';
+
+      position: absolute;
+
+      left: 0;
+      bottom: 5px;
+
+      width: 23px;
+      height: 3px;
+
+      background: $acid;
+    }
   }
 }
 

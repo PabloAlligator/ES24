@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f7f7f3" />
-    <link rel="stylesheet" href="site/css/main.min.css" />
+    <link rel="stylesheet" href="site/css/main.min.css?v=smoke-visible-1" />
     <title>Enduro Siberia 24 — Regulmoto Legend 300</title>
   </head>
 
   <body>
     <main class="page">
       <section class="hero">
+        <!-- прогрессия -->
         <div class="hero-rail" aria-hidden="true">
           <ol class="hero-rail__pages">
             <li class="hero-rail__page hero-rail__page--active">01</li>
@@ -25,6 +26,18 @@
             <span>СВОБОДА</span>
           </div>
         </div>
+
+        <!-- справа манифест -->
+
+        <div class="hero-manifest" aria-hidden="true">
+          <div class="hero-manifest__text">
+            <span>ЭНДУРО</span>
+            <span>БОЛЬШЕ</span>
+            <span>ЧЕМ ДОРОГА</span>
+          </div>
+        </div>
+
+        <!-- контент -->
 
         <div class="hero-content">
           <h1 class="hero-content__title">
@@ -163,6 +176,27 @@
           </div>
         </div>
 
+        <!-- дым позади мотоцикла -->
+        <div class="hero-bike-smoke" aria-hidden="true">
+          <span class="hero-bike-smoke__puff hero-bike-smoke__puff--1"></span>
+          <span class="hero-bike-smoke__puff hero-bike-smoke__puff--2"></span>
+          <span class="hero-bike-smoke__puff hero-bike-smoke__puff--3"></span>
+          <span class="hero-bike-smoke__puff hero-bike-smoke__puff--4"></span>
+          <span class="hero-bike-smoke__puff hero-bike-smoke__puff--5"></span>
+          <span class="hero-bike-smoke__puff hero-bike-smoke__puff--6"></span>
+          <span class="hero-bike-smoke__puff hero-bike-smoke__puff--7"></span>
+          <span class="hero-bike-smoke__puff hero-bike-smoke__puff--8"></span>
+        </div>
+
+        <!-- камни -->
+        <div class="hero-rocks" aria-hidden="true">
+          <img
+            class="hero-rocks__image"
+            src="site/img/stonesIbike.png"
+            alt=""
+          />
+        </div>
+
         <!-- мотоцикл -->
         <div class="hero-bike" aria-hidden="true">
           <img class="hero-bike__image" src="site/img/mot.png" alt="" />
@@ -187,11 +221,29 @@
             </div>
 
             <div class="hero-backdrop__lower-cut"></div>
+
+            <div class="hero-backdrop__lower-info">
+              <p class="hero-backdrop__lower-model">
+                <span>REGULMOTO</span>
+                <span><strong>LEGEND </strong>300</span>
+              </p>
+
+              <p class="hero-backdrop__lower-copy">
+                НЕ ДЛЯ ТОГО,<br />
+                ЧТОБЫ СТОЯТЬ.
+              </p>
+            </div>
           </div>
         </div>
       </section>
+
+      <section class="next">
+        <h2>ergregfer</h2>
+      </section>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
     <script src="site/js/main.js"></script>
+    <script src="site/js/hero-smoke.js?v=smoke-visible-1"></script>
   </body>
 </html>
