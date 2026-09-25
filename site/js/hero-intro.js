@@ -31,6 +31,7 @@
   const actions = hero.querySelector('.hero-content__actions');
   const advantageBlocks = gsap.utils.toArray('.hero-adventages__block', hero);
   const obzor = hero.querySelector('.hero-obzor');
+  const mobileBenefits = gsap.utils.toArray('.hero-mobile-benefits__item', hero);
 
   const rail = hero.querySelector('.hero-rail');
   const railPages = gsap.utils.toArray('.hero-rail__page', hero);
@@ -139,6 +140,12 @@
       force3D: true,
     });
 
+    gsap.set(mobileBenefits, {
+      y: 12,
+      autoAlpha: 0,
+      force3D: true,
+    });
+
     gsap.set(railPages, {
       x: -10,
       autoAlpha: 0,
@@ -187,6 +194,7 @@
         obzor,
         manifestText,
         ...advantageBlocks,
+        ...mobileBenefits,
         ...railPages,
         ...railLabels,
       ],
@@ -257,6 +265,7 @@
             obzor,
             manifestText,
             ...advantageBlocks,
+            ...mobileBenefits,
             ...railPages,
             ...railLabels,
           ],
@@ -378,7 +387,18 @@
         },
         1.58,
       )
-      .to(obzor, { y: 0, autoAlpha: 1, duration: 0.54 }, 2.0);
+      .to(obzor, { y: 0, autoAlpha: 1, duration: 0.54 }, 2.0)
+      .to(
+        mobileBenefits,
+        {
+          y: 0,
+          autoAlpha: 1,
+          duration: 0.42,
+          stagger: 0.07,
+          ease: 'power2.out',
+        },
+        1.92,
+      );
 
     // 8. Rail и правый manifest — периферия появляется после главной сцены.
     tl.call(() => hero.classList.add('hero--rail-line-visible'), [], 1.66);
