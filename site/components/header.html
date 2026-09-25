@@ -1,0 +1,155 @@
+<header class="site-header" data-site-header>
+  <div class="site-header__bar">
+    <div class="site-header__mobile-leading">
+      <button
+        class="site-header__burger"
+        type="button"
+        aria-label="Открыть меню"
+        aria-expanded="false"
+        aria-controls="site-header-mobile-menu"
+        data-header-menu-toggle
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <a class="site-header__logo" href="index.html" aria-label="Enduro Siberia 24 — главная">
+      <span class="site-header__logo-main">
+        <span>ES</span><strong>24</strong>
+      </span>
+      <span class="site-header__logo-sub">ENDURO SIBERIA</span>
+    </a>
+
+    <nav class="site-header__nav" aria-label="Основная навигация">
+      <a class="site-header__nav-link is-active" href="index.html" aria-current="page">Главная</a>
+
+      <div class="site-header__nav-item site-header__nav-item--catalog">
+        <div class="site-header__nav-catalog-trigger">
+          <a class="site-header__nav-link" href="motorcycles.html">Мотоциклы</a>
+          <button
+            class="site-header__catalog-toggle"
+            type="button"
+            aria-label="Открыть категории мотоциклов"
+            aria-expanded="false"
+            data-catalog-toggle
+          >
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div class="site-header__catalog" data-catalog-menu>
+          <a class="site-header__catalog-card" href="motorcycles.html#enduro">
+            <span class="site-header__catalog-media" aria-hidden="true">
+              <img src="site/img/mot.webp" alt="" />
+            </span>
+            <span class="site-header__catalog-copy">
+              <strong>Эндуро</strong>
+              <small>Для леса, гор и бездорожья</small>
+            </span>
+          </a>
+
+          <a class="site-header__catalog-card" href="motorcycles.html#pitbikes">
+            <span class="site-header__catalog-media site-header__catalog-media--pit" aria-hidden="true">
+              <img src="site/img/mot.webp" alt="" />
+            </span>
+            <span class="site-header__catalog-copy">
+              <strong>Питбайки</strong>
+              <small>Компактная техника для трасс</small>
+            </span>
+          </a>
+
+          <a class="site-header__catalog-all" href="motorcycles.html">Все мотоциклы</a>
+        </div>
+      </div>
+
+      <a class="site-header__nav-link" href="equipment.html">Экипировка</a>
+      <a class="site-header__nav-link" href="company.html">О компании</a>
+      <a class="site-header__nav-link" href="contacts.html">Контакты</a>
+    </nav>
+
+    <div class="site-header__desktop-separator" aria-hidden="true"></div>
+
+    <a class="site-header__partner" href="partners.html">Партнёрам</a>
+
+    <div class="site-header__actions">
+      <button
+        class="site-header__icon-button"
+        type="button"
+        aria-label="Поиск"
+        aria-expanded="false"
+        data-header-search-toggle
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="6.5"></circle>
+          <path d="m16 16 4.25 4.25"></path>
+        </svg>
+      </button>
+
+      <a class="site-header__icon-button site-header__favorites" href="favorites.html" aria-label="Избранное">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.5 8.8c0 5-8.5 10.2-8.5 10.2S3.5 13.8 3.5 8.8A4.3 4.3 0 0 1 12 7.7a4.3 4.3 0 0 1 8.5 1.1Z"></path>
+        </svg>
+        <span class="site-header__favorites-count" aria-label="0 товаров в избранном">0</span>
+      </a>
+
+      <a class="site-header__stock" href="motorcycles.html#in-stock">В наличии</a>
+    </div>
+  </div>
+
+  <div class="site-header__search" data-header-search aria-hidden="true">
+    <form class="site-header__search-form" action="motorcycles.html" method="get" role="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="11" cy="11" r="6.5"></circle>
+        <path d="m16 16 4.25 4.25"></path>
+      </svg>
+      <input
+        type="search"
+        name="q"
+        placeholder="Поиск мотоцикла или экипировки"
+        autocomplete="off"
+        aria-label="Поиск по сайту"
+      />
+      <button type="button" aria-label="Закрыть поиск" data-header-search-close>
+        <span></span>
+        <span></span>
+      </button>
+    </form>
+  </div>
+
+  <div
+    class="site-header__mobile-panel"
+    id="site-header-mobile-menu"
+    aria-hidden="true"
+    data-header-mobile-menu
+  >
+    <nav class="site-header__mobile-nav" aria-label="Мобильная навигация">
+      <a href="index.html" aria-current="page">Главная</a>
+
+      <div class="site-header__mobile-catalog">
+        <div class="site-header__mobile-catalog-head">
+          <a href="motorcycles.html">Мотоциклы</a>
+          <button
+            type="button"
+            aria-label="Показать категории мотоциклов"
+            aria-expanded="false"
+            data-mobile-catalog-toggle
+          >
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
+        <div class="site-header__mobile-subnav" data-mobile-catalog>
+          <a href="motorcycles.html#enduro">Эндуро</a>
+          <a href="motorcycles.html#pitbikes">Питбайки</a>
+          <a href="motorcycles.html">Все мотоциклы</a>
+        </div>
+      </div>
+
+      <a href="equipment.html">Экипировка</a>
+      <a href="company.html">О компании</a>
+      <a href="contacts.html">Контакты</a>
+      <a href="partners.html">Партнёрам</a>
+    </nav>
+  </div>
+</header>

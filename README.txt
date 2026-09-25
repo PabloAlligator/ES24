@@ -1,31 +1,25 @@
-ES24 — HERO MOTION
-
-Готовый набор файлов для desktop hero.
+ES24 — glass header
 
 Что добавлено:
-- hover / focus-visible / active для CTA и кнопки обзора;
-- загрузочный GSAP intro ~3 сек;
-- preload-scale фонового слоя;
-- сборка правых slash / mountain / rider / lower-cut блоков;
-- wipe кислотной полосы;
-- поэтапное появление REGULMOTO / LEGEND / 300;
-- разовый brightness-акцент 300;
-- появление камней перед посадкой мотоцикла;
-- мягкая посадка мотоцикла;
-- stagger слогана, CTA, характеристик и обзора;
-- появление hero-rail и manifest;
-- прорисовка кислотных линий и штрихов;
-- постоянный многослойный дым после intro;
-- деликатный desktop parallax через GSAP quickTo;
-- prefers-reduced-motion fallback.
+- site/components/header.html — отдельный компонент хедера;
+- site/js/main.js — загрузка компонента + dropdown + mobile menu + search + hide/show on scroll;
+- site/scss/header.scss — исходный SCSS хедера;
+- site/css/header.css — готовый runtime CSS, поэтому пересобирать SCSS для проверки не нужно;
+- index.html — preload компонента, подключение header.css и slot для компонента;
+- hero-intro.js / hero-smoke.js — текущие версии сохранены без изменения.
 
-Файлы:
-index.html
-site/scss/main.scss
-site/css/hero-motion.css
-site/js/main.js
-site/js/hero-intro.js
-site/js/hero-smoke.js
+Поведение:
+- скролл вниз: header скрывается;
+- скролл вверх: header появляется;
+- в начале страницы всегда видим;
+- после 24px скролла glass становится чуть плотнее;
+- desktop hover/focus на «Мотоциклы» открывает dropdown;
+- поиск открывает glass search panel;
+- mobile <= 900px: burger + logo + search + favorite + «В наличии»;
+- mobile menu и вложенный пункт «Мотоциклы» работают отдельно;
+- Escape закрывает поиск/меню;
+- prefers-reduced-motion учтён.
 
-hero-motion.css подключён после main.min.css, поэтому интерактивы и линии работают сразу.
-main.scss также содержит те же motion-правила для следующей штатной SCSS-сборки.
+Маршруты сейчас заложены как будущие страницы:
+index.html, motorcycles.html, equipment.html, company.html, contacts.html, partners.html, favorites.html.
+Если имена страниц в проекте будут другими — меняются только href в header.html.

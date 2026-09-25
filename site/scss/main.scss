@@ -261,7 +261,7 @@ button {
   color: transparent;
   -webkit-text-fill-color: transparent;
 
-  background-image: url('../img/hero-back.png');
+  background-image: url('../img/hero-back.webp');
   background-size: 1080px auto;
   background-position: 46% 43%;
   background-repeat: no-repeat;
@@ -313,7 +313,7 @@ button {
   }
 
   &__name {
-    background-image: url('../img/hero-back.png');
+    background-image: url('../img/hero-back.webp');
     background-size: 1080px auto;
     background-position: 46% 43%;
 
@@ -327,7 +327,7 @@ button {
 
     background-image:
       linear-gradient(rgba($acid, 0.88), rgba($acid, 0.88)),
-      url('../img/hero-back.png');
+      url('../img/hero-back.webp');
     background-size:
       auto,
       900px auto;
@@ -932,7 +932,7 @@ button {
       top: -350px;
       bottom: -120px;
 
-      background: url('../img/hero-back.png') center center / cover no-repeat;
+      background: url('../img/hero-back.webp') center center / cover no-repeat;
 
       // ВОТ ЭТИМ РЕАЛЬНО ДВИГАЕШЬ ФОТО
       transform: translateY(-50px);
@@ -1030,7 +1030,7 @@ button {
 
       background-image:
         linear-gradient(rgba(4, 5, 6, 0.66), rgba(4, 5, 6, 0.66)),
-        url('../img/hero-back.png');
+        url('../img/hero-back.webp');
 
       // 1 слой — затемнение
       // 2 слой — размер / зум фотографии
@@ -1098,7 +1098,7 @@ button {
     &::before {
       background:
         linear-gradient(rgba($paper, 0.65), rgba($paper, 0.65)),
-        url('../img/hero-back.png') 84% 13% / 910px auto no-repeat;
+        url('../img/hero-back.webp') 84% 13% / 910px auto no-repeat;
 
       background-blend-mode: screen;
 
@@ -1132,7 +1132,7 @@ button {
       // Запас по краям нужен из-за обратного skew.
       inset: -12% -64%;
 
-      background: url('../img/hero-back.png') 72% 16% / cover no-repeat;
+      background: url('../img/hero-back.webp') 72% 16% / cover no-repeat;
 
       // Компенсация наклона панели.
       transform: skewX(28deg) scale(1.08);
@@ -1181,7 +1181,7 @@ button {
       position: absolute;
       inset: -12% -24%;
 
-      background: url('../img/hero-back.png') 78% 73% / cover no-repeat;
+      background: url('../img/hero-back.webp') 78% 73% / cover no-repeat;
 
       transform: skewX(28deg) scale(1.08);
       transform-origin: center;

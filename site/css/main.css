@@ -196,7 +196,7 @@ button {
   white-space: nowrap;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  background-image: url("../img/hero-back.png");
+  background-image: url("../img/hero-back.webp");
   background-size: 1080px auto;
   background-position: 46% 43%;
   background-repeat: no-repeat;
@@ -236,7 +236,7 @@ button {
   background-repeat: no-repeat;
 }
 .hero-model__name {
-  background-image: url("../img/hero-back.png");
+  background-image: url("../img/hero-back.webp");
   background-size: 1080px auto;
   background-position: 46% 43%;
   filter: grayscale(1) contrast(1.45) brightness(0.33);
@@ -245,7 +245,7 @@ button {
   font-size: 0.79em;
   line-height: 0.72;
   letter-spacing: 3px;
-  background-image: linear-gradient(rgba(223, 255, 0, 0.88), rgba(223, 255, 0, 0.88)), url("../img/hero-back.png");
+  background-image: linear-gradient(rgba(223, 255, 0, 0.88), rgba(223, 255, 0, 0.88)), url("../img/hero-back.webp");
   background-size: auto, 900px auto;
   background-position: center, 40% 52%;
   background-blend-mode: multiply;
@@ -669,7 +669,7 @@ button {
   right: 0;
   top: -350px;
   bottom: -120px;
-  background: url("../img/hero-back.png") center center/cover no-repeat;
+  background: url("../img/hero-back.webp") center center/cover no-repeat;
   transform: translateY(-50px);
   opacity: 0.82;
   filter: saturate(0.78) contrast(1.04) brightness(1.08);
@@ -719,7 +719,7 @@ button {
   bottom: -10%;
   width: 400%;
   height: 140%;
-  background-image: linear-gradient(rgba(4, 5, 6, 0.66), rgba(4, 5, 6, 0.66)), url("../img/hero-back.png");
+  background-image: linear-gradient(rgba(4, 5, 6, 0.66), rgba(4, 5, 6, 0.66)), url("../img/hero-back.webp");
   background-size: 100% 100%, auto 180%;
   background-position: center, 10% 50%;
   background-repeat: no-repeat;
@@ -753,7 +753,7 @@ button {
   background: none;
 }
 .hero-backdrop__slash--white::before {
-  background: linear-gradient(rgba(247, 247, 243, 0.65), rgba(247, 247, 243, 0.65)), url("../img/hero-back.png") 84% 13%/910px auto no-repeat;
+  background: linear-gradient(rgba(247, 247, 243, 0.65), rgba(247, 247, 243, 0.65)), url("../img/hero-back.webp") 84% 13%/910px auto no-repeat;
   background-blend-mode: screen;
   filter: saturate(0.92) contrast(1.06);
 }
@@ -772,7 +772,7 @@ button {
   content: "";
   position: absolute;
   inset: -12% -64%;
-  background: url("../img/hero-back.png") 72% 16%/cover no-repeat;
+  background: url("../img/hero-back.webp") 72% 16%/cover no-repeat;
   transform: skewX(28deg) scale(1.08);
   transform-origin: center;
   filter: saturate(0.92) contrast(1.06);
@@ -802,7 +802,7 @@ button {
   content: "";
   position: absolute;
   inset: -12% -24%;
-  background: url("../img/hero-back.png") 78% 73%/cover no-repeat;
+  background: url("../img/hero-back.webp") 78% 73%/cover no-repeat;
   transform: skewX(28deg) scale(1.08);
   transform-origin: center;
 }
