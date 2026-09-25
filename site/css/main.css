@@ -208,7 +208,7 @@ button {
   letter-spacing: 3px;
   background-image: linear-gradient(rgba(223, 255, 0, 0.88), rgba(223, 255, 0, 0.88)), url("../img/hero-back.png");
   background-size: auto, 900px auto;
-  background-position: center, 34% 73%;
+  background-position: center, 40% 52%;
   background-blend-mode: multiply;
   filter: saturate(1.3) contrast(1.22) brightness(1.07);
 }
@@ -428,6 +428,22 @@ button {
   white-space: nowrap;
 }
 
+.hero-bike {
+  position: absolute;
+  left: 42.8%;
+  bottom: -2.2%;
+  z-index: 4;
+  width: 49.5%;
+  pointer-events: none;
+}
+
+.hero-bike__image {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+}
+
 .hero-backdrop {
   position: absolute;
   inset: 0;
@@ -491,7 +507,7 @@ button {
   right: 60.5%;
   z-index: 1;
   width: 18%;
-  height: 41%;
+  height: 41.5%;
   transform: skewX(-28deg);
 }
 .hero-backdrop__slash--black::before {
@@ -503,8 +519,8 @@ button {
   width: 400%;
   height: 140%;
   background-image: linear-gradient(rgba(4, 5, 6, 0.66), rgba(4, 5, 6, 0.66)), url("../img/hero-back.png");
-  background-size: 100% 100%, 460% auto;
-  background-position: center, calc(50% - 370px) calc(50% + 410px);
+  background-size: 100% 100%, auto 180%;
+  background-position: center, 10% 50%;
   background-repeat: no-repeat;
   background-blend-mode: multiply;
   transform: skewX(28deg);

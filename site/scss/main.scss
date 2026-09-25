@@ -276,7 +276,7 @@ button {
       900px auto;
     background-position:
       center,
-      34% 73%;
+      40% 52%;
     background-blend-mode: multiply;
 
     filter: saturate(1.3) contrast(1.22) brightness(1.07);
@@ -550,6 +550,28 @@ button {
   }
 }
 
+// мотоцикл
+
+.hero-bike {
+  position: absolute;
+  left: 42.8%;
+  bottom: -2.2%;
+  z-index: 4;
+
+  width: 49.5%;
+
+  pointer-events: none;
+}
+
+.hero-bike__image {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+}
+
+// фигуры
+
 .hero-backdrop {
   position: absolute;
   inset: 0;
@@ -677,7 +699,7 @@ button {
   z-index: 1;
 
   width: 18%;
-  height: 41%;
+  height: 41.5%;
 
   transform: skewX(-28deg);
 
@@ -704,15 +726,15 @@ button {
 
     // 1 слой — затемнение
     // 2 слой — размер / зум фотографии
-    background-size:
-      100% 100%,
-      460% auto;
+   background-size:
+  100% 100%,
+  auto 180%;
 
     // 1 слой — затемнение
     // 2 слой — положение фотографии
-    background-position:
-      center,
-      calc(50% - 370px) calc(50% + 410px);
+   background-position:
+  center,
+  10% 50%;
 
     background-repeat: no-repeat;
 
